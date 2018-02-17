@@ -32,7 +32,6 @@ interfaces:
 #    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'C-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-06-DC
 #    lag: 65
 
-  ae66:
     description: {{ 'core1.' +  device_vars['popcode'][:-1] }}b:ae66
     v4_address:
       - 152.195.196.130/31
