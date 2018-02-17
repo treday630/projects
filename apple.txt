@@ -1,0 +1,8 @@
+
+ " Plugins will be downloaded under the specified directory.
+ call plug#begin('~/.vim/useful_plugins')
+ "
+ " " Declare the list of plugins.
+ "
+ " " List ends here. Plugins become visible to Vim after this call.
+ call plug#end()
