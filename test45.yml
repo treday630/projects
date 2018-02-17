@@ -1,0 +1,395 @@
+---
+interfaces:
+#  ae65:
+#    description: {{ 'core1.' +  device_vars['popcode'][:-1] }}a:ae65
+#    v4_address:
+#      - 152.195.zz.128/31
+#    v6_address:
+#      - 2606:2800:zzzz:000f::1/126
+#    bfd:
+#      neighbor: 152.195.ww.0
+#      local_address: 152.195.zz.0
+#    mode: routed
+#    mtu: 9192
+#    link_speed: 100g
+#    transmit: fast
+#  et-0/0/29:
+#    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'C-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-DC
+#    lag: 65
+#  et-4/0/35:
+#    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'C-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-DC
+#    lag: 65
+#  et-5/0/35:
+#    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'C-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-03-DC
+#    lag: 65
+#  et-6/0/35:
+#    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'C-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-04-DC
+#    lag: 65
+#  et-7/0/35:
+#    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'C-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-05-DC
+#    lag: 65
+#  et-0/0/27:
+#    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'C-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-06-DC
+#    lag: 65
+
+    description: {{ 'core1.' +  device_vars['popcode'][:-1] }}b:ae66
+    v4_address:
+      - 152.195.196.130/31
+    v6_address:
+      - 2606:2800:6002:000f::5/126
+    bfd:
+      neighbor: 152.195.198.0
+      local_address: 152.195.196.0
+    mode: routed
+    mtu: 9192
+    link_speed: 100g
+    transmit: fast
+  et-0/0/26:
+    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'B-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-DC
+    lag: 66
+  et-4/0/29:
+    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'B-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-DC
+    lag: 66
+  et-5/0/29:
+    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'B-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-03-DC
+    lag: 66
+  et-6/0/29:
+    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'B-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-04-DC
+    lag: 66
+  et-7/0/29:
+    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'B-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-05-DC
+    lag: 66
+  et-0/0/25:
+    description: {{ inventory_hostname.upper() + '_CORE1.' +  device_vars['popcode'][:-1].upper() + 'B-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-06-DC
+    lag: 66
+
+  ae67:
+    description: core1.SIN:ae66
+    mode: routed
+    mtu: 9192
+    link_speed: 40g
+    v4_address:
+      - 152.195.196.132/31
+    v6_address:
+      - 2606:2800:6002:000f::9/126
+  et-4/0/20:
+    description: {{ inventory_hostname.upper() + '_CORE1.SIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-DE
+    lag: 67
+  et-5/0/20:
+    description: {{ inventory_hostname.upper() + '_CORE1.SIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-DE
+    lag: 67
+  et-6/0/20:
+    description: {{ inventory_hostname.upper() + '_CORE1.SIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-03-DE
+    lag: 67
+  et-7/0/20:
+    description: {{ inventory_hostname.upper() + '_CORE1.SIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-04-DE
+    lag: 67
+
+  ae84:
+    description: {{ 'STARHUB-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-802.1Q
+    link_speed: 10g
+    mode: routed
+    lldp: False
+    v4_address:
+    mode: trunk
+    vlan:
+      - 93
+      - 94
+  xe-4/0/0:1:
+    description: {{ 'STARHUB-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 84
+    flow: True
+  xe-5/0/0:0:
+    description: {{ 'STARHUB-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-PX
+    lag: 84
+    flow: True
+
+  ae85:
+    description: {{ 'TELENOR-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    lldp: False
+    v4_address:
+      - 192.229.190.94/31
+    v6_address:
+      - 2606:2800:6000:3fff::2d/126
+  xe-4/0/0:2:
+    description: {{ 'TELENOR-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 85
+    flow: True
+  xe-5/0/0:1:
+    description: {{ 'TELENOR-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-PX
+    lag: 85
+    flow: True
+
+  ae87:
+    description: {{ 'TELSTRA-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-TX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 210.176.138.138/30
+    v6_address:
+      - 2403:e800:508:100::12/126
+  xe-6/0/6:2:
+    description: {{ 'TELSTRA-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-TX
+    lag: 87
+    flow: True
+  xe-5/0/6:2:
+    description: {{ 'TELSTRA-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-TX
+    lag: 87
+    flow: True
+  xe-4/0/6:2:
+    description: {{ 'TELSTRA-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-03-TX
+    lag: 87
+    flow: True
+
+  ae88:
+    description: {{ 'RELIANCEJIO-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PC
+    filter: transit
+    link_speed: 100g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 152.195.196.192/31
+    v6_address:
+      - 2606:2800:6002:f:8000::1/126
+  et-0/0/28:
+    description: {{ 'RELIANCEJIO-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PC
+    lag: 88
+    flow: True
+
+  ae89:
+    description: {{ 'TELIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 152.195.196.194/31
+    v6_address:
+      - 2606:2800:6002:000F:8000::5/126
+  xe-4/0/6:1:
+    description: {{ 'TELIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 89
+    flow: True
+  xe-5/0/6:1:
+    description: {{ 'TELIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-PX
+    lag: 89
+    flow: True
+  xe-6/0/6:1:
+    description: {{ 'TELIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-03-PX
+    lag: 89
+    flow: True
+  xe-7/0/6:1:
+    description: {{ 'TELIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-04-PX
+    lag: 89
+    flow: True
+  xe-4/0/8:1:
+    description: {{ 'TELIN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-05-PX
+    lag: 89
+    flow: True
+
+  ae90:
+    description: {{ 'RSV.AIRTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 152.195.196.196/31
+    v6_address:
+      - 2606:2800:6002:000F:8000::9/126
+  xe-7/0/0:3:
+    description: {{ 'RSV.AIRTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 90
+  xe-5/0/2:3:
+    description: {{ 'RSV.AIRTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-PX
+    lag: 90
+
+  ae91:
+    description: {{ 'RSV.JASTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 182.50.84.165/31
+    v6_address:
+      -  2404:4a00:4562:9a1::165/127
+  xe-6/0/0:3:
+    description: {{ 'RSV.JASTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 91
+  xe-4/0/2:3:
+    description: {{ 'RSV.JASTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-PX
+    lag: 91
+
+  ae93:
+    description: {{ 'RSV.BBIX-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-IX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+#    v4_address:
+#      - 103.231.152.116/22
+#    v6_address:
+#      -  2001:df5:b800:bb00::1:5133:2/64
+  xe-5/0/2:2:
+    description: {{ 'RSV.BBIX-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-IX
+    lag: 93
+  xe-7/0/2:2:
+    description: {{ 'RSV.BBIX-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-IX
+    lag: 93
+
+  ae94:
+    description: {{ 'FPT-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 118.69.132.113/31
+    v6_address:
+      - 2405:4800:0000:0002::2/126
+  xe-6/0/2:2:
+    description: {{ 'FPT-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 94
+    flow: True
+
+  ae95:
+    description: {{ 'RSV.VIETTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 192.229.190.88/31
+    v6_address:
+      - 2606:2800:6000:3fff::1d/126
+  xe-4/0/4:1:
+    description: {{ 'RSV.VIETTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 95
+  xe-5/0/4:1:
+    description: {{ 'RSV.VIETTEL-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-02-PX
+    lag: 95
+
+  ae98:
+    description: {{ 'RSV.TFN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 60.199.24.14/30
+    v6_address:
+      - 2001:4540:4000:0007::3/127
+  xe-4/0/2:1:
+    description: {{ 'RSV.TFN-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    lag: 98
+    flow: True
+
+  ae100:
+    description: {{ 'EQIX-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-LAG01-IC
+    filter: transit
+    link_speed: 100g
+    mode: routed
+    mtu: 9192
+    lldp: False
+    v4_address:
+      - 27.111.228.67/22
+    v6_address:
+      - 2001:de8:4::1:5133:1/64
+  et-4/0/31:
+    description: {{ 'EQIX-' + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-IC
+    lag: 100
+    flow: True
+
+  xe-4/0/0:0:
+    description: {{ "NTT-" + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-TX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    lldp: False
+    flow: True
+    v4_address:
+      - 116.51.17.154/30
+    v6_address:
+      - 2001:218:4000:5000::20e/126
+
+  xe-7/0/0:0:
+    description: {{ "RSV.CHUNGHWATEL-" + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-PX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    lldp: False
+    flow: True
+    v4_address:
+      - 192.229.190.85/30
+    v6_address:
+      - 2606:2800:6000:3fff::1/126
+
+  xe-4/0/2:2:
+    description: {{ "RSV.GTT-" + device_vars['popcode'].upper() + '-' + device_vars['region_short'].upper() }}-01-TX
+    filter: transit
+    link_speed: 10g
+    mode: routed
+    lldp: False
+    flow: True
+    v4_address:
+      - 183.182.80.214/30
+    v6_address:
+      - 2001:0668:0000:0003:ffff:0000:b7b6:50d6/126
+
+  xe-4/0/14:3:
+    description: DMSW
+    mode: access
+    vlan:
+      - 12
+
+  xe-4/0/14:0:
+    description: {{ "vmhost001." + device_vars['popcode'] }}-xe1
+    mode: trunk
+    vlan:
+      - 7
+      - 10
+      - 13
+    native_vlan: 7
+
+  xe-5/0/14:0:
+    description: {{ "vmhost002." + device_vars['popcode'] }}-xe1
+    mode: trunk
+    vlan:
+      - 7
+      - 10
+      - 13
+    native_vlan: 7
+
+  irb:
+    93:
+      description: STARHUB_4657-{{ device_vars['popcode'] | upper }}-{{ device_vars['region_short'] | upper }}-01-PX
+      v4_address:
+        203.116.245.110/30:
+      v6_address:
+        2406:3000:2:d0::2/64:
+      filter: transit
+      flow: True
+    94:
+      description: STARHUB_38861-{{ device_vars['popcode'] | upper }}-{{ device_vars['region_short'] | upper }}-01-PX
+      v4_address:
+        203.117.35.114/30:
+      v6_address:
+        2406:3001:20:24::2/64:
+      filter: transit
+      flow: True
+
